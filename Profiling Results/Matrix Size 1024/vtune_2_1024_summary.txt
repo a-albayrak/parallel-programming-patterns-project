@@ -1,0 +1,47 @@
+Elapsed Time: 4.415s
+    CPU Time: 4.739s
+        Effective Time: 4.719s
+            Idle: 0.010s
+            Poor: 4.709s
+            Ok: 0s
+            Ideal: 0s
+            Over: 0s
+        Spin Time: 0.020s
+        Overhead Time: 0s
+    Total Thread Count: 2
+    Paused Time: 0s
+
+Top Hotspots
+Function                    Module     CPU Time
+--------------------------  ---------  --------
+strassen_multiply_internal  str_test     1.881s
+calloc                      libc.so.6    0.826s
+matrix_add._omp_fn.0        str_test     0.690s
+_int_free                   libc.so.6    0.400s
+matrix_sub._omp_fn.1        str_test     0.381s
+[Others]                    N/A          0.561s
+Effective CPU Utilization: 3.8%
+ | The metric value is low, which may signal a poor logical CPU cores
+ | utilization caused by load imbalance, threading runtime overhead, contended
+ | synchronization, or thread/process underutilization. Explore sub-metrics to
+ | estimate the efficiency of MPI and OpenMP parallelism or run the Locks and
+ | Waits analysis to identify parallel bottlenecks for other parallel runtimes.
+ |
+    Average Effective CPU Utilization: 1.075 out of 28
+Collection and Platform Info
+    Application Command Line: ./str_test "1024" 
+    Operating System: 3.10.0-327.36.1.el7.x86_64 NAME="CentOS Linux" VERSION="7 (Core)" ID="centos" ID_LIKE="rhel fedora" VERSION_ID="7" PRETTY_NAME="CentOS Linux 7 (Core)" ANSI_COLOR="0;31" CPE_NAME="cpe:/o:centos:centos:7" HOME_URL="https://www.centos.org/" BUG_REPORT_URL="https://bugs.centos.org/"  CENTOS_MANTISBT_PROJECT="CentOS-7" CENTOS_MANTISBT_PROJECT_VERSION="7" REDHAT_SUPPORT_PRODUCT="centos" REDHAT_SUPPORT_PRODUCT_VERSION="7" 
+    Computer Name: s034
+    Result Size: 3 MB 
+    Collection start time: 19:27:17 31/12/2024 UTC
+    Collection stop time: 19:27:22 31/12/2024 UTC
+    Collector Type: Driverless Perf per-process counting,User-mode sampling and tracing
+    CPU
+        Name: Intel(R) Xeon(R) Processor code named Broadwell
+        Frequency: 2.400 GHz 
+        Logical CPU Count: 28
+
+If you want to skip descriptions of detected performance issues in the report,
+enter: amplxe-cl -report summary -report-knob show-issues=false -r
+<my_result_dir>. Alternatively, you may view the report in the csv format:
+amplxe-cl -report <report_name> -format=csv.
